@@ -20,41 +20,34 @@ class modInStAiNfO
      *
      * @access public
      */    
-    public static function getHello($params)
-    {
-         $user_id = $params->get('user_id');
-         $access_token = $params->get('access_token');
-         $app = JFactory::getApplication();
-    $menu = $app->getMenu();
-    if ($menu->getActive() == $menu->getDefault()) {
-       echo "</br>";
-         $instagram = "https://api.instagram.com/v1/users/".$user_id."/?access_token=".$access_token;
-         $my_account = 'mina.fathi2012'; 
-         echo 'Click to go to instagram : <a href="http://instagram.com/'.$my_account.'"><button>mina fathi</button></a></br>';
-         $instagram_follows = json_decode(file_get_contents($instagram))->data->counts->followed_by;
-        echo "folowers : ".$instagram_follows;
-        $media = json_decode(file_get_contents($instagram))->data->counts->media;
-        $follows = json_decode(file_get_contents($instagram))->data->counts->follows;
-        $bio = json_decode(file_get_contents($instagram))->data->bio;
-        $profile_picture = json_decode(file_get_contents($instagram))->data->profile_picture;
-        $full_name = json_decode(file_get_contents($instagram))->data->full_name;
-        echo "</br>"."media : " . $media;
-        echo "</br>"."follows : " . $follows;
-        echo "</br>"."bio : " . $bio;
-        echo "</br>"."profile_picture : " . $profile_picture;
-        echo "</br>"."full_name : " . $full_name;
+   public static function getHello() {
+
+    // $instagram = "https://api.instagram.com/v1/users/3164500208/?access_token=3164500208.eeeb575.c6c8566d17a349db8f817d0ef8bfe212";
+    // $my_account = 'mina.fathi2012'; 
+    // //echo 'Click to go to instagram : <a href="http://instagram.com/'.$my_account.'"><button>mina fathi</button></a></br>';
+    // $instagram_follows = json_decode(file_get_contents($instagram))->data->counts->followed_by;
+    // $media = json_decode(file_get_contents($instagram))->data->counts->media;
+    // $follows = json_decode(file_get_contents($instagram))->data->counts->follows;
+    // $bio = json_decode(file_get_contents($instagram))->data->bio;
+    // $website = json_decode(file_get_contents($instagram))->data->website;
+    // $profile_picture = json_decode(file_get_contents($instagram))->data->profile_picture;
+    // $full_name = json_decode(file_get_contents($instagram))->data->full_name;
+    // return;         
     }
-            
-            $insta_source = file_get_contents('http://instagram.com/'.$my_account);
-            $shards = explode('window._sharedData = ', $insta_source);
-            $insta_json = explode(';</script>', $shards[1]); 
-            $results_array = json_decode($insta_json[0], TRUE);
-             $latest_array = $results_array['entry_data']['ProfilePage'][0]['user']['media']['nodes'][0];
-        echo 'Latest Photo:<br/>';
-        echo '<a href="http://instagram.com/p/'.$latest_array['code'].'"><img src="'.$latest_array['display_src'].'"></a></br>';
-        echo 'Likes: '.$latest_array['likes']['count'].' - Comments: '.$latest_array['comments']['count'].'<br/>';
-}
-}
+    function test(){
+        $yy= "sss";
+    }
 
-
+}
+    $instagram = "https://api.instagram.com/v1/users/3164500208/?access_token=3164500208.eeeb575.c6c8566d17a349db8f817d0ef8bfe212";
+    $my_account = 'mina.fathi2012'; 
+    //echo 'Click to go to instagram : <a href="http://instagram.com/'.$my_account.'"><button>mina fathi</button></a></br>';
+    $instagram_follows = json_decode(file_get_contents($instagram))->data->counts->followed_by;
+    $media = json_decode(file_get_contents($instagram))->data->counts->media;
+    $follows = json_decode(file_get_contents($instagram))->data->counts->follows;
+    $bio = json_decode(file_get_contents($instagram))->data->bio;
+    $website = json_decode(file_get_contents($instagram))->data->website;
+    $profile_picture = json_decode(file_get_contents($instagram))->data->profile_picture;
+    $full_name = json_decode(file_get_contents($instagram))->data->full_name;
+    return; 
 ?>
