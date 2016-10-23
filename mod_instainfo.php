@@ -16,9 +16,9 @@
 defined('_JEXEC') or die;
 // Include the syndicate functions only once
 require_once dirname(__FILE__) . '/helper.php';
-$hello = modInStAiNfO::getHello($params);
-$count = count($hello);
-$post = modInStAiNfO::posts($params);
-$count = count($post);
+// $hello = modInStAiNfO::getHello($params);
+// $count = count($hello);
+// $post = modInStAiNfO::posts($params);
+// $count = count($post);
 require JModuleHelper::getLayoutPath('mod_instainfo');
 ?>

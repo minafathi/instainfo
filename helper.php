@@ -63,7 +63,7 @@ class modInStAiNfO
         for($i=0; $i < 12; $i++)
         {
             $latest_array = $results_array['entry_data']['ProfilePage'][0]['user']['media']['nodes'][$i];
-            $link = "http://instagram.com/p/'".$latest_array['code'];
+            $link = "http://instagram.com/p/".$latest_array['code'];
             $img = $latest_array['display_src'];
             $like = $latest_array['likes']['count'];
             $comment = $latest_array['comments']['count'];
