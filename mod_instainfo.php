@@ -18,5 +18,7 @@ defined('_JEXEC') or die;
 require_once dirname(__FILE__) . '/helper.php';
 $hello = modInStAiNfO::getHello($params);
 $count = count($hello);
+$post = modInStAiNfO::posts();
+$count = count($post);
 require JModuleHelper::getLayoutPath('mod_instainfo');
 ?>
