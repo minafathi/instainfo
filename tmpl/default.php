@@ -27,21 +27,21 @@ $info = $insta_info->getHello($params);
               <div class="row">
                 <div class="col-sm-4 border-right">
                   <div class="description-block">
-                    <h5 class="description-header"><?php echo $info[3]; ?></h5>
-                    <span class="description-text">دنبال شونده</span>
+                    <h5 class="description-header"><?php echo $info[5]; ?></h5>
+                    <span class="description-text">تعداد پست</span>
                   </div>
                 </div>
                 <div class="col-sm-4 border-right">
                   <div class="description-block">
-                    <h5 class="description-header"><?php echo $info[4]; ?></h5>
-                    <span class="description-text">دنبال کننده</span>
+                    <h5 class="description-header"><?php echo $info[3]; ?></h5>
+                    <span class="description-text">دنبال شونده</span>
                   </div>
                 </div>
                 <!-- /.col -->
                 <div class="col-sm-4">
                   <div class="description-block">
-                    <h5 class="description-header"><?php echo $info[5]; ?></h5>
-                    <span class="description-text">تعداد پست</span>
+                    <h5 class="description-header"><?php echo $info[4]; ?></h5>
+                    <span class="description-text">دنبال کننده</span>
                   </div>
                 </div>
               </div> 
@@ -50,7 +50,7 @@ $info = $insta_info->getHello($params);
         </div>
         <?php
             $posts = new modInStAiNfO();
-            $latest_posts = $posts->posts();
+            $latest_posts = $posts->posts($params);
             echo "پست اول : </br>". "لینک : " . $latest_posts[0] . "</br> عکس : " .  $latest_posts[1] . "</br> لایک : " .  $latest_posts[2] . "</br> کامنت : " . $latest_posts[3];
             echo "</br>-------------------------------------------------------</br>"; 
             echo "پست دوم : </br>". "لینک : " . $latest_posts[4] . "</br> عکس : " .  $latest_posts[5] . "</br> لایک : " .  $latest_posts[6] . "</br> کامنت : " . $latest_posts[7];

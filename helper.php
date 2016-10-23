@@ -47,10 +47,12 @@ class modInStAiNfO
     return $arr; 
    }
    
-   public function posts() {
+   public function posts($params) {
 
-        $n = $this->getHello($params);
-        $username = $n[6];
+        $user_id = $params->get('user_id');
+        $access_token = $params->get('access_token');
+        $instagram = "https://api.instagram.com/v1/users/".$user_id."/?access_token=".$access_token;
+        $username = json_decode(file_get_contents($instagram))->data->username;
         //$username = 'mina.fathi2012'; 
         $insta_source = file_get_contents('http://instagram.com/'.$username);
         $shards = explode('window._sharedData = ', $insta_source);
