@@ -32,8 +32,8 @@ $info = $insta_info->getHello($params);
             ?>
             <div class="col-sm-12 img">
             <?php
-            $width = 35;
-            $height = 35;
+            $width = 45;
+            $height = 45;
             ?>
             <style>
             .col-sm-12.img img{
@@ -41,6 +41,7 @@ $info = $insta_info->getHello($params);
               height: <?php echo $height; ?>px;
               border-radius: 3px;
               margin-top: 10px;
+              margin-bottom: 10px;
             }
             </style>
 
