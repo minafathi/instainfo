@@ -12,7 +12,7 @@ JHtml::stylesheet('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap
 JHtml::script('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js');
 JHtml::stylesheet(JURI::root().'modules/mod_instainfo/css/instainfo.css');
 $insta_info = new modInStAiNfO();
-$info = $insta_info->getHello($params);
+$info = $insta_info->getInfo($params);
 ?>
  <!-- <div class="col-md-4">           -->
           <div class="box box-widget widget-user">

@@ -20,7 +20,7 @@ class modInStAiNfO
      *
      * @access public
      */    
-   public static function getHello($params) {
+   public static function getInfo($params) {
     $user_id = $params->get('user_id');
     $access_token = $params->get('access_token');
     $width = $params->get('width');
