@@ -15,6 +15,7 @@
         <filename>index.html</filename>
         <filename>helper.php</filename>
         <filename>tmpl/default.php</filename>
+        <filename>css/instainfo.css</filename>
     </files>
     <config>
 
