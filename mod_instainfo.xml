@@ -15,11 +15,18 @@
 
         <fields name="params">
             <fieldset name="basic">
-                <field name="user_id" type="int" default="" label="شماره آیدی" description="">
-                </field>
-                <field name="access_token" type="text" default="" label="توکن" description="">
-
-        </field>
+                <field name="user_id" type="int" default="" label="شماره آیدی" description="" required="true"></field>
+                <field name="access_token" type="text" default="" label="توکن" description="" required="true"></field>
+                <field name="width" type="int" default="" label="عرض" description=""></field>
+                <field name="height" type="int" default="" label="ارتفاع" description=""></field>
+                <field name="rtlhead" type="radio" label="تنظیم موقعیت" class="" description="" size="30" default="" required="">
+					<option value="1">راست</option>
+					<option value="0">چپ</option>
+		    	</field>
+                <field name="published" type="radio" label="تنظیم نمایش داده شود" class="btn-group btn-group-yesno" description="" size="30" default="" required="true">
+					<option value="1">بله</option>
+					<option value="0">خیر</option>
+		    	</field>
                 </fieldset>
                 </fields>
     </config>
