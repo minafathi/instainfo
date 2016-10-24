@@ -23,8 +23,12 @@ class modInStAiNfO
    public static function getHello($params) {
     $user_id = $params->get('user_id');
     $access_token = $params->get('access_token');
+    $width = $params->get('width');
+    $height = $params->get('height');
+    $rtlhead = $params->get('rtlhead');
+    $published = $params->get('published');
 
-
+   if(isset($user_id) && isset($access_token)) {
    $instagram = "https://api.instagram.com/v1/users/".$user_id."/?access_token=".$access_token;
    // $my_account = 'mina.fathi2012'; 
     //echo 'Click to go to instagram : <a href="http://instagram.com/'.$my_account.'"><button>mina fathi</button></a></br>';
@@ -44,23 +48,36 @@ class modInStAiNfO
     $arr[] =  $follows;
     $arr[] =  $media; 
     $arr[] =  $username;   
+    $arr[] =  $width; 
+    $arr[] =  $height; 
+    $arr[] =  $rtlhead; 
+    $arr[] =  $published; 
     return $arr; 
+    } else {
+        echo ".شماره آیدی یا توکن خالی میباشد";
+    }
    }
    
    public function posts($params) {
-
+       
         $user_id = $params->get('user_id');
         $access_token = $params->get('access_token');
+         if(isset($user_id) && isset($access_token)) {
         $instagram = "https://api.instagram.com/v1/users/".$user_id."/?access_token=".$access_token;
         $username = json_decode(file_get_contents($instagram))->data->username;
-        //$username = 'mina.fathi2012'; 
+        $media = json_decode(file_get_contents($instagram))->data->counts->media;
+        
         $insta_source = file_get_contents('http://instagram.com/'.$username);
         $shards = explode('window._sharedData = ', $insta_source);
         $insta_json = explode(';</script>', $shards[1]); 
         $results_array = json_decode($insta_json[0], TRUE);
         //$latest_array = $results_array['entry_data']['ProfilePage'][0]['user']['media']['nodes'][0];
-    
-        for($i=0; $i < 12; $i++)
+        if($media < 12) {
+            $count = $media;
+        } else if ($media > 12) {
+            $count = 12;
+        }
+        for($i=0; $i < $count; $i++)
         {
             $latest_array = $results_array['entry_data']['ProfilePage'][0]['user']['media']['nodes'][$i];
             $link = "http://instagram.com/p/".$latest_array['code'];
@@ -76,8 +93,10 @@ class modInStAiNfO
             }
         }                             
         return  $variables;
-   }
-    
    
+     } else {
+
+    }
+   }
 }
 ?>
