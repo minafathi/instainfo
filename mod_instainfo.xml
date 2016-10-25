@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.1.0" client="site" method="upgrade">
     <name>mod_instainfo</name>
-    <author>Mina Fathi</author>
+    <author>trangell team</author>
     <version>1.0.0</version>
-    <description>A simple Hello, World! module.</description>
+	<creationDate>October 2016</creationDate>
+	<copyright>Copyright (C) 2016 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>info@trangell.com</authorEmail>
+	<authorUrl>https://trangell.com</authorUrl>
+    <description>instainfo instagram basic info module https://trangell.com</description>
     <files>
         <filename>mod_instainfo.xml</filename>
         <filename module="mod_instainfo">mod_instainfo.php</filename>
@@ -11,6 +16,12 @@
         <filename>helper.php</filename>
         <filename>tmpl/default.php</filename>
     </files>
+    <languages>
+		<language tag="en-GB">en-GB.mod_instainfo.ini</language>
+		<language tag="en-GB">en-GB.mod_instainfo.sys.ini</language>
+        <language tag="fa-IR">fa-IR.mod_instainfo.ini</language>
+		<language tag="fa-IR">fa-IR.mod_instainfo.sys.ini</language>
+	</languages>
     <config>
 
         <fields name="params">
@@ -19,13 +30,9 @@
                 <field name="access_token" type="text" default="" label="توکن" description="" required="true"></field>
                 <field name="width" type="int" default="" label="عرض" description=""></field>
                 <field name="height" type="int" default="" label="ارتفاع" description=""></field>
-                <field name="rtlhead" type="radio" label="تنظیم موقعیت" class="" description="" size="30" default="" required="">
+                <field name="rtlhead" type="radio" label="تنظیم موقعیت" class="btn-group btn-group-yesno" description="" size="30" default="" required="true">
 					<option value="1">راست</option>
 					<option value="0">چپ</option>
-		    	</field>
-                <field name="published" type="radio" label="تنظیم نمایش داده شود" class="btn-group btn-group-yesno" description="" size="30" default="" required="true">
-					<option value="1">بله</option>
-					<option value="0">خیر</option>
 		    	</field>
                 </fieldset>
                 </fields>

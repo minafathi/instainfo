@@ -1,24 +1,25 @@
 <?php 
+defined('_JEXEC') or die; 
+
 /**
- * @package     Joomla.Site
- * @subpackage  mod_articles_category
- *
- * @copyright   Copyright (C) 2005 - 2015 Open Source Matters, Inc. All rights reserved.
+ * @package     Joomla.Site module
+ * @subpackage  mod_instainfo
+ * @author      trangell team https://trangell.com
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
-// No direct access
-defined('_JEXEC') or die; 
 JHtml::stylesheet('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
 JHtml::script('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js');
 JHtml::stylesheet(JURI::root().'modules/mod_instainfo/css/instainfo.css');
 $insta_info = new modInStAiNfO();
 $info = $insta_info->getInfo($params);
+$width = intval($info[7]);
+$height = intval($info[8]);
+$rtlhead = intval($info[9]);
 ?>
- <!-- <div class="col-md-4">           -->
           <div class="box box-widget widget-user">
             <div class="widget-user-header bg-aqua-active">
-              <h3 class="widget-user-username"><?php echo $info[0];?></h3>
-              <h5 class="widget-user-desc"><?php echo $info[1];?></h5>
+              <h3 class="widget-user-username"><?php echo htmlspecialchars($info[0]);?></h3>
+              <h5 class="widget-user-desc"><?php echo htmlspecialchars($info[1]);?></h5>
             </div>
             <div class="widget-user-image">
               <img class="img-circle" src="<?php echo $info[2];?>" alt="User Avatar">
@@ -31,12 +32,13 @@ $info = $insta_info->getInfo($params);
             $latest_posts = $posts->posts($params);
             ?>
             <div class="col-sm-12 img">
-            <?php
-            $width = $info[7];
-            $height = $info[8];
-            $rtlhead = $info[9];
-            $published = $info[10];
-            ?>
+            <?php if($rtlhead == 1) { ?>
+            <style>
+              .widget-user-header.bg-aqua-active {
+                text-align: right !important;
+              }
+            </style>
+            <?php } ?>
             <style>
             .col-sm-12.img img{
               width: <?php echo $width; ?>px;
@@ -110,29 +112,26 @@ $info = $insta_info->getInfo($params);
               <?php } ?>
             </div>
             </div>
-            <!-- row -->
             <div class="clearfix"></div>
               <div class="row">
                 <div class="col-sm-4 border-right">
                   <div class="description-block">
-                    <h5 class="description-header"><?php echo $info[5]; ?></h5>
-                    <span class="description-text">تعداد پست</span>
+                    <h5 class="description-header"><?php echo htmlspecialchars($info[5]); ?></h5>
+                    <span class="description-text"><?php  echo JText::_('MOD_INSTAINFO_MEDIA_COUNT'); ?></span>
                   </div>
                 </div>
                 <div class="col-sm-4 border-right">
                   <div class="description-block">
-                    <h5 class="description-header"><?php echo $info[3]; ?></h5>
-                    <span class="description-text">دنبال شونده</span>
+                    <h5 class="description-header"><?php echo htmlspecialchars($info[3]); ?></h5>
+                    <span class="description-text"><?php  echo JText::_('MOD_INSTAINFO_FOLLOWERS_COUNT'); ?></span>
                   </div>
                 </div>
-                <!-- /.col -->
                 <div class="col-sm-4">
                   <div class="description-block">
-                    <h5 class="description-header"><?php echo $info[4]; ?></h5>
-                    <span class="description-text">دنبال کننده</span>
+                    <h5 class="description-header"><?php echo htmlspecialchars($info[4]); ?></h5>
+                    <span class="description-text"><?php  echo JText::_('MOD_INSTAINFO_FOLLOWING_COUNT'); ?></span>
                   </div>
                 </div>
               </div> 
             </div>
           </div>
-        <!-- </div> -->
