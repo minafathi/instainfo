@@ -39,7 +39,7 @@ class modInStAiNfO {
                 $arr[] = $published; 
                 return $arr; 
         }else {
-            echo ".شماره آیدی یا توکن خالی میباشد";
+              echo JText::_('MOD_INSTAINFO_EMPTY_FIELDS'); 
         }
    }
    

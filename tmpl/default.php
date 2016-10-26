@@ -117,19 +117,19 @@ $rtlhead = intval($info[9]);
                 <div class="col-sm-4 border-right">
                   <div class="description-block">
                     <h5 class="description-header"><?php echo htmlspecialchars($info[5]); ?></h5>
-                    <span class="description-text">تعداد پست</span>
+                    <span class="description-text"><?php  echo JText::_('MOD_INSTAINFO_MEDIA_COUNT'); ?></span>
                   </div>
                 </div>
                 <div class="col-sm-4 border-right">
                   <div class="description-block">
                     <h5 class="description-header"><?php echo htmlspecialchars($info[3]); ?></h5>
-                    <span class="description-text">دنبال شونده</span>
+                    <span class="description-text"><?php  echo JText::_('MOD_INSTAINFO_FOLLOWERS_COUNT'); ?></span>
                   </div>
                 </div>
                 <div class="col-sm-4">
                   <div class="description-block">
                     <h5 class="description-header"><?php echo htmlspecialchars($info[4]); ?></h5>
-                    <span class="description-text">دنبال کننده</span>
+                    <span class="description-text"><?php  echo JText::_('MOD_INSTAINFO_FOLLOWING_COUNT'); ?></span>
                   </div>
                 </div>
               </div> 
