@@ -2,7 +2,7 @@
 <extension type="module" version="3.1.0" client="site" method="upgrade">
     <name>mod_instainfo</name>
     <author>trangell team</author>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 	<creationDate>October 2016</creationDate>
 	<copyright>Copyright (C) 2016 Open Source Matters. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
@@ -15,19 +15,24 @@
         <filename>index.html</filename>
         <filename>helper.php</filename>
         <filename>tmpl/default.php</filename>
-        <filename>css/instainfo.css</filename>
     </files>
+        <languages>
+        <language tag="en-GB">en-GB.mod_instainfo.ini</language>
+        <language tag="en-GB">en-GB.mod_instainfo.sys.ini</language>
+        <language tag="fa-IR">fa-IR.mod_instainfo.ini</language>
+        <language tag="fa-IR">fa-IR.mod_instainfo.sys.ini</language>
+    </languages>
     <config>
 
         <fields name="params">
             <fieldset name="basic">
-                <field name="user_id" type="int" default="" label="شماره آیدی" description="" required="true"></field>
-                <field name="access_token" type="text" default="" label="توکن" description="" required="true"></field>
-                <field name="width" type="int" default="" label="عرض" description=""></field>
-                <field name="height" type="int" default="" label="ارتفاع" description=""></field>
-                <field name="rtlhead" type="radio" label="تنظیم موقعیت" class="btn-group btn-group-yesno" description="" size="30" default="" required="true">
-					<option value="1">راست</option>
-					<option value="0">چپ</option>
+                <field name="user_id" type="int" default="" label="user id" description="" required="true"></field>
+                <field name="access_token" type="text" default="" label="access token" description="" required="true"></field>
+                <field name="width" type="int" default="" label="images width" description="" required="true"></field>
+                <field name="height" type="int" default="" label="imgaes height" description="" required="true"></field>
+                <field name="rtlhead" type="radio" label="direction" class="btn-group btn-group-yesno" description="" size="30" default="" required="true">
+					<option value="1">rtl</option>
+					<option value="0">ltr</option>
 		    	</field>
                 </fieldset>
                 </fields>
