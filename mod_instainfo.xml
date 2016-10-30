@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.1.0" client="site" method="upgrade">
-    <name>mod_instainfo</name>
+    <name>instagram basic info</name>
     <author>trangell team</author>
     <version>1.0.1</version>
 	<creationDate>October 2016</creationDate>
