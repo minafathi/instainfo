@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.1.0" client="site" method="upgrade">
-    <name>instagram basic info</name>
+    <name>instainfo - Instagram Basic Information</name>
     <author>trangell team</author>
     <version>1.0.1</version>
 	<creationDate>October 2016</creationDate>
