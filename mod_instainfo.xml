@@ -2,7 +2,7 @@
 <extension type="module" version="3.1.0" client="site" method="upgrade">
     <name>instainfo - Instagram Basic Information</name>
     <author>trangell team</author>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
 	<creationDate>October 2016</creationDate>
 	<copyright>Copyright (C) 2016 Open Source Matters. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
