@@ -15,8 +15,10 @@
         <filename>index.html</filename>
         <filename>helper.php</filename>
         <filename>tmpl/default.php</filename>
+        <filename>css/instainfo.css</filename>
+        <folder>language</folder>
     </files>
-        <languages>
+        <languages folder="language">
         <language tag="en-GB">en-GB.mod_instainfo.ini</language>
         <language tag="en-GB">en-GB.mod_instainfo.sys.ini</language>
         <language tag="fa-IR">fa-IR.mod_instainfo.ini</language>
